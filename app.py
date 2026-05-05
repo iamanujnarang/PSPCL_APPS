@@ -7,7 +7,7 @@ st.set_page_config(page_title="PSPCL Utility Hub", page_icon="⚡", layout="wide
 
 # Assets
 PSPCL_LOGO_URL = "https://pspcl.in/assets/images/logo.png"
-BEECLUE_LOGO_PNG = "https://beeclue.com/wp-content/uploads/2026/02/b-horizontal-logo-w-2048x506.png"
+BEECLUE_LOGO_PNG = "https://raw.githubusercontent.com/iamanujnarang/LDHF/e5748e037b76a52a47d610a88c3a3c70f72f1c9a/BEECLUE.png"
 INSTA_ICON = "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
 FB_ICON = "https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
 X_ICON = "https://upload.wikimedia.org/wikipedia/commons/b/b7/X_logo.jpg"
@@ -127,7 +127,7 @@ with col_a:
     st.markdown(f"""
     <div class="app-card">
         <h2 style="color: #1e293b;">⚡ LDHF Calculator</h2>
-        <p style="color: #64748b;">Standard Assessment Method as per Annexure-7 for calculating monthly units.[cite: 1]</p>
+        <p style="color: #64748b;">Standard Assessment Method for calculating monthly units based on Load, Days, Hours, and Factor.[cite: 1]</p>
         <div><a href="https://ldhfcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -136,7 +136,7 @@ with col_b:
     st.markdown(f"""
     <div class="app-card">
         <h2 style="color: #1e293b;">📉 VD Calculator</h2>
-        <p style="color: #64748b;">Voltage Drop calculation tool for distribution planning and maintenance.</p>
+        <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning and feeder maintenance.</p>
         <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -165,7 +165,7 @@ footer_html = f"""
     </div>
     
     <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 20px;">
-        © 2026 | PSPCL Guidelines 2026
+        © 2026 | PSPCL Instructions 2026 Guidelines[cite: 1]
     </div>
 </div>
 """
