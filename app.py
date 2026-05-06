@@ -57,43 +57,41 @@ st.markdown("""
         font-size: 0.9rem;
     }
 
-    /* Footer Styling */
+    /* Footer Styling - Original Black Box Style */
     .footer-container {
         text-align: center;
         margin-top: 80px;
         padding: 40px 20px;
-        border-top: 1px solid #eee;
-        background-color: #ffffff;
+        border-top: 1px solid #ddd;
     }
     .made-with-love {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: #334155;
         margin-bottom: 20px;
-        font-weight: 500;
     }
     .heart-symbol {
         color: #e63946;
-        display: inline-block;
-        animation: heartbeat 1.5s infinite;
-    }
-    @keyframes heartbeat {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.2); }
-        100% { transform: scale(1); }
     }
     .social-icon {
-        width: 32px;
-        margin: 0 12px;
-        transition: transform 0.3s ease;
+        width: 30px;
+        margin: 0 10px;
+        transition: 0.3s;
     }
-    .social-icon:hover { transform: scale(1.3); }
+    .social-icon:hover { transform: scale(1.2); }
 
+    .beeclue-box {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        display: inline-block;
+        margin-top: 20px;
+    }
     .powered-text {
         color: #94a3b8;
         font-size: 0.7rem;
-        text-transform: uppercase;
         letter-spacing: 2px;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
     }
     .beeclue-img { width: 180px; height: auto; }
 </style>
@@ -113,7 +111,7 @@ st.markdown(f"""
 st.divider()
 
 # ==========================================
-# 3. APPLICATIONS GRID (3 Columns)
+# 3. APPLICATIONS GRID
 # ==========================================
 col_a, col_b, col_c = st.columns(3)
 
@@ -130,7 +128,7 @@ with col_b:
     st.markdown(f"""
     <div class="app-card">
         <h2 style="color: #1e293b;">📉 VD Calculator</h2>
-        <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning and feeder maintenance.</p>
+        <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning and feeder maintenance.[cite: 1]</p>
         <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
@@ -139,19 +137,20 @@ with col_c:
     st.markdown(f"""
     <div class="app-card">
         <h2 style="color: #1e293b;">🔌 Load Calculator</h2>
-        <p style="color: #64748b;">Calculate Connected Load for domestic and commercial connections as per PSPCL norms.</p>
+        <p style="color: #64748b;">Calculate Connected Load for domestic and commercial connections as per PSPCL norms.[cite: 1]</p>
         <div><a href="https://loadcal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-st.info("💡 More utility tools like 'Transformer Loading' and 'Consumer Billing Abstract' are under development.")
+st.info("💡 More utility tools like 'Transformer Loading' and 'Consumer Billing Abstract' are under development.[cite: 1]")
 
 # ==========================================
-# 4. UPDATED FOOTER
+# 4. RESTORED ORIGINAL FOOTER
 # ==========================================
 footer_html = f"""
 <div class="footer-container">
     <div class="made-with-love">Made with <span class="heart-symbol">❤️</span> by <b>Er. Anuj Narang, JE PSPCL</b></div>
+    
     <div style="margin-bottom: 25px;">
         <a href="https://instagram.com/iamanujnarang" target="_blank"><img src="{INSTA_ICON}" class="social-icon"></a>
         <a href="https://facebook.com/iamanujnarang" target="_blank"><img src="{FB_ICON}" class="social-icon"></a>
@@ -159,14 +158,16 @@ footer_html = f"""
         <a href="https://linkedin.com/in/iamanujnarang" target="_blank"><img src="{LINKEDIN_ICON}" class="social-icon"></a>
     </div>
 
-    <div style="margin-top: 25px;">
+    <div class="beeclue-box">
         <div class="powered-text">In Strategic Collaboration with</div>
         <a href="https://beeclue.com" target="_blank">
             <img src="{BEECLUE_LOGO_PNG}" class="beeclue-img">
         </a>
     </div>
-
-    <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines</div>
+    
+    <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 20px;">
+        © 2026 | PSPCL Guidelines[cite: 1]
+    </div>
 </div>
 """
 st.markdown(footer_html, unsafe_allow_html=True)
