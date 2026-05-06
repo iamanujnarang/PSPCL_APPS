@@ -27,13 +27,13 @@ st.markdown("""
     /* App Card Styling */
     .app-card {
         background: white;
-        padding: 30px;
+        padding: 25px;
         border-radius: 20px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         border: 1px solid #eef2f6;
         text-align: center;
         transition: all 0.3s ease;
-        height: 280px;
+        height: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -48,12 +48,13 @@ st.markdown("""
     .launch-btn {
         background-color: #0b79d0;
         color: white !important;
-        padding: 12px 25px;
+        padding: 10px 20px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
         display: inline-block;
-        margin-top: 20px;
+        margin-top: 15px;
+        font-size: 0.9rem;
     }
 
     /* Footer Styling */
@@ -87,13 +88,6 @@ st.markdown("""
     }
     .social-icon:hover { transform: scale(1.3); }
 
-    .beeclue-box {
-        background: #1e293b;
-        padding: 20px 35px;
-        border-radius: 15px;
-        display: inline-block;
-        margin-top: 25px;
-    }
     .powered-text {
         color: #94a3b8;
         font-size: 0.7rem;
@@ -119,9 +113,9 @@ st.markdown(f"""
 st.divider()
 
 # ==========================================
-# 3. APPLICATIONS GRID
+# 3. APPLICATIONS GRID (3 Columns)
 # ==========================================
-col_a, col_b = st.columns(2)
+col_a, col_b, col_c = st.columns(3)
 
 with col_a:
     st.markdown(f"""
@@ -141,6 +135,15 @@ with col_b:
     </div>
     """, unsafe_allow_html=True)
 
+with col_c:
+    st.markdown(f"""
+    <div class="app-card">
+        <h2 style="color: #1e293b;">🔌 Load Calculator</h2>
+        <p style="color: #64748b;">Calculate Connected Load for domestic and commercial connections as per PSPCL norms.</p>
+        <div><a href="https://loadcal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
+    </div>
+    """, unsafe_allow_html=True)
+
 st.info("💡 More utility tools like 'Transformer Loading' and 'Consumer Billing Abstract' are under development.")
 
 # ==========================================
@@ -148,23 +151,22 @@ st.info("💡 More utility tools like 'Transformer Loading' and 'Consumer Billin
 # ==========================================
 footer_html = f"""
 <div class="footer-container">
-<div class="made-with-love">Made with <span class="heart-symbol">❤️</span> by <b>Er. Anuj Narang, JE PSPCL</b></div>
-<div style="margin-bottom: 25px;">
-<a href="https://instagram.com/iamanujnarang" target="_blank"><img src="{INSTA_ICON}" class="social-icon"></a>
-<a href="https://facebook.com/iamanujnarang" target="_blank"><img src="{FB_ICON}" class="social-icon"></a>
-<a href="https://x.com/iamanujnarang" target="_blank"><img src="{X_ICON}" class="social-icon"></a>
-<a href="https://linkedin.com/in/iamanujnarang" target="_blank"><img src="{LINKEDIN_ICON}" class="social-icon"></a>
-</div>
+    <div class="made-with-love">Made with <span class="heart-symbol">❤️</span> by <b>Er. Anuj Narang, JE PSPCL</b></div>
+    <div style="margin-bottom: 25px;">
+        <a href="https://instagram.com/iamanujnarang" target="_blank"><img src="{INSTA_ICON}" class="social-icon"></a>
+        <a href="https://facebook.com/iamanujnarang" target="_blank"><img src="{FB_ICON}" class="social-icon"></a>
+        <a href="https://x.com/iamanujnarang" target="_blank"><img src="{X_ICON}" class="social-icon"></a>
+        <a href="https://linkedin.com/in/iamanujnarang" target="_blank"><img src="{LINKEDIN_ICON}" class="social-icon"></a>
+    </div>
 
-<!-- Beeclue without box -->
-<div style="margin-top: 25px;">
-    <div class="powered-text">In Strategic Collaboration with</div>
-    <a href="https://beeclue.com" target="_blank">
-        <img src="{BEECLUE_LOGO_PNG}" class="beeclue-img">
-    </a>
-</div>
+    <div style="margin-top: 25px;">
+        <div class="powered-text">In Strategic Collaboration with</div>
+        <a href="https://beeclue.com" target="_blank">
+            <img src="{BEECLUE_LOGO_PNG}" class="beeclue-img">
+        </a>
+    </div>
 
-<div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines</div>
+    <div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines</div>
 </div>
 """
 st.markdown(footer_html, unsafe_allow_html=True)
