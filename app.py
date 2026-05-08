@@ -94,7 +94,7 @@ st.markdown(f"""
 <div class="header-container">
     <img src="{PSPCL_LOGO_URL}" width="160">
     <h1 style="margin-top: 15px;">⚡ PSPCL Digital Toolbox</h1>
-    <p style="font-size: 1.2rem; color: #64748b;">Official Utility Applications for Junior Engineers & Staff</p>
+    <p style="font-size: 1.2rem; color: #64748b;">Un-official Utility Applications for Junior Engineers & Staff</p>
 </div>
 """, unsafe_allow_html=True)
 
