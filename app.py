@@ -122,7 +122,7 @@ with row1_col2:
     <div class="app-card">
         <div>
             <h2 style="color: #1e293b;">🏗️ Colony Load Calculator</h2>
-            <p style="color: #64748b;">Advanced tool for Colony load assessment including FAR logic, diversity factors (40%/50%), and DT capacity planning.</p>
+            <p style="color: #64748b;">Advanced tool for Colony load assessment including FAR logic, demand factors (40%/50%), and DT capacity planning.</p>
         </div>
         <div><a href="https://colonyload.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
