@@ -16,7 +16,7 @@ LINKEDIN_ICON = "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_lo
 # Custom CSS
 st.markdown("""
 <style>
-    .main { background-color: #f0f2f6; }
+    .main { background-color: #f8fafc; }
     
     /* Header Centering */
     .header-container {
@@ -33,7 +33,7 @@ st.markdown("""
         border: 1px solid #eef2f6;
         text-align: center;
         transition: all 0.3s ease;
-        height: 320px; /* Increased height for better fit */
+        height: 340px; 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -101,62 +101,73 @@ st.markdown(f"""
 st.divider()
 
 # ==========================================
-# 3. APPLICATIONS GRID (2x2 Layout)
+# 3. APPLICATIONS GRID
 # ==========================================
-# Row 1
-col1, col2 = st.columns(2)
+# Row 1 - Three Apps
+row1_col1, row1_col2, row1_col3 = st.columns(3)
 
-with col1:
+with row1_col1:
     st.markdown(f"""
     <div class="app-card">
         <div>
             <h2 style="color: #1e293b;">⚡ LDHF Calculator</h2>
-            <p style="color: #64748b;">Standard Assessment Method for calculating monthly units based on Load, Days, Hours, and Factor as per Supply Code.[cite: 1773, 2094]</p>
+            <p style="color: #64748b;">Standard Assessment Method for calculating monthly units based on Load, Days, Hours, and Factor as per Supply Code.</p>
         </div>
         <div><a href="https://ldhfcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-with col2:
+with row1_col2:
+    st.markdown(f"""
+    <div class="app-card">
+        <div>
+            <h2 style="color: #1e293b;">🏗️ Colony Load Calculator</h2>
+            <p style="color: #64748b;">Advanced tool for Colony load assessment including FAR logic, diversity factors (40%/50%), and DT capacity planning.</p>
+        </div>
+        <div><a href="https://colonyload.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with row1_col3:
     st.markdown(f"""
     <div class="app-card">
         <div>
             <h2 style="color: #1e293b;">💰 Proportionate Cost Calculator</h2>
-            <p style="color: #64748b;">Calculate connectivity charges, SLC, and Bank Guarantee (35%/105%) for new connections and colonies.[cite: 2360, 2375]</p>
+            <p style="color: #64748b;">Calculate connectivity charges, SLC, and Bank Guarantee (35%/105%) for new connections and colonies.</p>
         </div>
         <div><a href="https://proratacal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-# Row 2
-col3, col4 = st.columns(2)
+# Row 2 - Two Apps
+row2_space1, row2_col4, row2_col5, row2_space2 = st.columns([1, 4, 4, 1])
 
-with col3:
+with row2_col4:
     st.markdown(f"""
     <div class="app-card">
         <div>
             <h2 style="color: #1e293b;">🔌 Load Calculator</h2>
-            <p style="color: #64748b;">Automated Connected Load computation for domestic and commercial categories based on Annexure-1 norms.[cite: 522, 2025]</p>
+            <p style="color: #64748b;">Automated Connected Load computation for domestic and commercial categories based on Annexure-1 norms.</p>
         </div>
         <div><a href="https://loadcal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-with col4:
+with row2_col5:
     st.markdown(f"""
     <div class="app-card">
         <div>
             <h2 style="color: #1e293b;">📉 VD Calculator</h2>
-            <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning, line maintenance, and technical feasibility.[cite: 1]</p>
+            <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning, line maintenance, and technical feasibility.</p>
         </div>
         <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-st.info("💡 Pro-Tip: These tools are based on Supply Code 2024 and latest Commercial Circulars like CC 45/2024 and CC 35/2025.[cite: 40, 2164]")
+st.info("💡 Pro-Tip: These tools are strictly based on Supply Code 2024 and latest Commercial Circulars (CC 45/2024 & CC 35/2025).")
 
 # ==========================================
-# 4. RESTORED ORIGINAL FOOTER
+# 4. FOOTER
 # ==========================================
 footer_html = f"""
 <div class="footer-container">
@@ -175,7 +186,7 @@ footer_html = f"""
     </a>
 </div>
 
-<div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines | CC 35/2025</div>
+<div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines | CC 45/2024</div>
 </div>
 """
 st.markdown(footer_html, unsafe_allow_html=True)
