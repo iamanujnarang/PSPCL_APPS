@@ -33,10 +33,10 @@ st.markdown("""
         border: 1px solid #eef2f6;
         text-align: center;
         transition: all 0.3s ease;
-        height: 300px;
+        height: 320px; /* Increased height for better fit */
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         margin-bottom: 25px;
     }
     .app-card:hover {
@@ -53,11 +53,10 @@ st.markdown("""
         text-decoration: none;
         font-weight: 600;
         display: inline-block;
-        margin-top: 15px;
         font-size: 0.9rem;
     }
 
-    /* Footer Styling - Original Black Box Style */
+    /* Footer Styling */
     .footer-container {
         text-align: center;
         margin-top: 80px;
@@ -69,9 +68,7 @@ st.markdown("""
         color: #334155;
         margin-bottom: 20px;
     }
-    .heart-symbol {
-        color: #e63946;
-    }
+    .heart-symbol { color: #e63946; }
     .social-icon {
         width: 30px;
         margin: 0 10px;
@@ -79,13 +76,6 @@ st.markdown("""
     }
     .social-icon:hover { transform: scale(1.2); }
 
-    .beeclue-box {
-        background: #1e293b;
-        padding: 20px;
-        border-radius: 12px;
-        display: inline-block;
-        margin-top: 20px;
-    }
     .powered-text {
         color: #94a3b8;
         font-size: 0.7rem;
@@ -111,38 +101,59 @@ st.markdown(f"""
 st.divider()
 
 # ==========================================
-# 3. APPLICATIONS GRID
+# 3. APPLICATIONS GRID (2x2 Layout)
 # ==========================================
-col_a, col_b, col_c = st.columns(3)
+# Row 1
+col1, col2 = st.columns(2)
 
-with col_a:
+with col1:
     st.markdown(f"""
     <div class="app-card">
-        <h2 style="color: #1e293b;">⚡ LDHF Calculator</h2>
-        <p style="color: #64748b;">Standard Assessment Method for calculating monthly units based on Load, Days, Hours, and Factor.[cite: 1]</p>
+        <div>
+            <h2 style="color: #1e293b;">⚡ LDHF Calculator</h2>
+            <p style="color: #64748b;">Standard Assessment Method for calculating monthly units based on Load, Days, Hours, and Factor as per Supply Code.[cite: 1773, 2094]</p>
+        </div>
         <div><a href="https://ldhfcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-with col_b:
+with col2:
     st.markdown(f"""
     <div class="app-card">
-        <h2 style="color: #1e293b;">📉 VD Calculator</h2>
-        <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning and feeder maintenance.[cite: 1]</p>
-        <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
+        <div>
+            <h2 style="color: #1e293b;">💰 Proportionate Cost Calculator</h2>
+            <p style="color: #64748b;">Calculate connectivity charges, SLC, and Bank Guarantee (35%/105%) for new connections and colonies.[cite: 2360, 2375]</p>
+        </div>
+        <div><a href="https://proratacal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-with col_c:
+# Row 2
+col3, col4 = st.columns(2)
+
+with col3:
     st.markdown(f"""
     <div class="app-card">
-        <h2 style="color: #1e293b;">🔌 Load Calculator</h2>
-        <p style="color: #64748b;">Calculate Connected Load for domestic and commercial connections as per PSPCL norms.[cite: 1]</p>
+        <div>
+            <h2 style="color: #1e293b;">🔌 Load Calculator</h2>
+            <p style="color: #64748b;">Automated Connected Load computation for domestic and commercial categories based on Annexure-1 norms.[cite: 522, 2025]</p>
+        </div>
         <div><a href="https://loadcal.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
-st.info("💡 More utility tools like 'Transformer Loading' and 'Consumer Billing Abstract' are under development.[cite: 1]")
+with col4:
+    st.markdown(f"""
+    <div class="app-card">
+        <div>
+            <h2 style="color: #1e293b;">📉 VD Calculator</h2>
+            <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning, line maintenance, and technical feasibility.[cite: 1]</p>
+        </div>
+        <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.info("💡 Pro-Tip: These tools are based on Supply Code 2024 and latest Commercial Circulars like CC 45/2024 and CC 35/2025.[cite: 40, 2164]")
 
 # ==========================================
 # 4. RESTORED ORIGINAL FOOTER
@@ -157,7 +168,6 @@ footer_html = f"""
 <a href="https://linkedin.com/in/iamanujnarang" target="_blank"><img src="{LINKEDIN_ICON}" class="social-icon"></a>
 </div>
 
-<!-- Beeclue without box -->
 <div style="margin-top: 25px;">
     <div class="powered-text">In Strategic Collaboration with</div>
     <a href="https://beeclue.com" target="_blank">
@@ -165,7 +175,7 @@ footer_html = f"""
     </a>
 </div>
 
-<div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines</div>
+<div style="color: #94a3b8; font-size: 0.85rem; margin-top: 25px;">© 2026 | PSPCL Guidelines | CC 35/2025</div>
 </div>
 """
 st.markdown(footer_html, unsafe_allow_html=True)
