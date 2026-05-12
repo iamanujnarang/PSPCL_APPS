@@ -160,7 +160,7 @@ with row2_col5:
             <h2 style="color: #1e293b;">📉 VD Calculator</h2>
             <p style="color: #64748b;">Voltage Drop calculation tool for efficient distribution planning, line maintenance, and technical feasibility.</p>
         </div>
-        <div><a href="https://pspclvdcalculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
+        <div><a href="https://pspcl-vd-calculator.streamlit.app/" target="_blank" class="launch-btn">Launch App →</a></div>
     </div>
     """, unsafe_allow_html=True)
 
